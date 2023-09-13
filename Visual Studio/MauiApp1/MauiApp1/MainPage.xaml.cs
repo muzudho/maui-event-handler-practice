@@ -1,11 +1,16 @@
 ﻿namespace MauiApp1;
 
+using MauiApp1.ViewModels;
+
 public partial class MainPage : ContentPage
 {
 	int count = 0;
 
 	public MainPage()
 	{
+        this.BindingContext = new NovelViewModel(
+            text: "てすとーお");
+
 		InitializeComponent();
 	}
 
@@ -20,5 +25,43 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+	/// <summary>
+	///		テキスト変更時
+	/// </summary>
+	/// <param name="sender"></param>
+	/// <param name="e"></param>
+    private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+    {
+
+    }
+
+    /// <summary>
+    ///		<pre>
+    ///			セットボタン　クリック時
+	///			
+	///			イベントハンドラをセットします
+    ///		</pre>
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void SetsButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    /// <summary>
+    ///		<pre>
+    ///			削除ボタン　クリック時
+	///			
+	///			イベントハンドラをセットします
+    ///		</pre>
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void DeletesButton_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }
 

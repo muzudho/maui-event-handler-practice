@@ -35,6 +35,21 @@
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
+            <Entry
+                Text="{Binding Text}"
+                TextChanged="Entry_TextChanged"
+                />
+
+            <Button
+                Text="イベントハンドラをセット"
+                Clicked="SetsButton_Clicked"
+                />
+
+            <Button
+                Text="イベントハンドラを削除"
+                Clicked="DeletesButton_Clicked"
+                />
+
         </VerticalStackLayout>
     </ScrollView>
 
