@@ -1,29 +1,15 @@
 ﻿namespace MauiApp1;
 
 using MauiApp1.ViewModels;
+using System.Diagnostics;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
-
 	public MainPage()
 	{
-        this.BindingContext = new NovelViewModel(
-            text: "てすとーお");
+        this.BindingContext = new MainPageViewModel();
 
 		InitializeComponent();
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
 
 	/// <summary>
@@ -33,7 +19,7 @@ public partial class MainPage : ContentPage
 	/// <param name="e"></param>
     private void Entry_TextChanged(object sender, TextChangedEventArgs e)
     {
-
+        Trace.WriteLine("テキスト変更時");
     }
 
     /// <summary>
@@ -47,7 +33,7 @@ public partial class MainPage : ContentPage
     /// <param name="e"></param>
     private void SetsButton_Clicked(object sender, EventArgs e)
     {
-
+        Trace.WriteLine("セット・ボタン・クリック時");
     }
 
     /// <summary>
@@ -61,7 +47,31 @@ public partial class MainPage : ContentPage
     /// <param name="e"></param>
     private void DeletesButton_Clicked(object sender, EventArgs e)
     {
+        Trace.WriteLine("削除ボタン・クリック時");
+    }
 
+    private void N0SelectButton_Clicked(object sender, EventArgs e)
+    {
+        Trace.WriteLine("０冊目の本を選択ボタン・クリック時");
+
+        var context = this.BindingContext as MainPageViewModel;
+        context.SelectedIndex = 0;
+    }
+
+    private void N1SelectButton_Clicked(object sender, EventArgs e)
+    {
+        Trace.WriteLine("１冊目の本を選択ボタン・クリック時");
+
+        var context = this.BindingContext as MainPageViewModel;
+        context.SelectedIndex = 1;
+    }
+
+    private void N2SelectButton_Clicked(object sender, EventArgs e)
+    {
+        Trace.WriteLine("２冊目の本を選択ボタン・クリック時");
+
+        var context = this.BindingContext as MainPageViewModel;
+        context.SelectedIndex = 2;
     }
 }
 

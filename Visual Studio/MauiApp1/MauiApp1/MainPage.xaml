@@ -28,27 +28,29 @@
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
             <Entry
                 Text="{Binding Text}"
-                TextChanged="Entry_TextChanged"
-                />
+                TextChanged="Entry_TextChanged"/>
 
             <Button
                 Text="イベントハンドラをセット"
-                Clicked="SetsButton_Clicked"
-                />
+                Clicked="SetsButton_Clicked"/>
 
             <Button
                 Text="イベントハンドラを削除"
-                Clicked="DeletesButton_Clicked"
-                />
+                Clicked="DeletesButton_Clicked"/>
+
+            <Button
+                Text="０冊目の本を選択"
+                Clicked="N0SelectButton_Clicked"/>
+
+            <Button
+                Text="１冊目の本を選択"
+                Clicked="N1SelectButton_Clicked"/>
+
+            <Button
+                Text="２冊目の本を選択"
+                Clicked="N2SelectButton_Clicked"/>
 
         </VerticalStackLayout>
     </ScrollView>
